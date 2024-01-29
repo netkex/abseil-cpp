@@ -1055,6 +1055,7 @@ absl_cc_test(
     absl::fixed_array
     absl::function_ref
     absl::hash
+    absl::hash_testing
     absl::log
     absl::optional
     absl::random_random
