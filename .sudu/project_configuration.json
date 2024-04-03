@@ -1,0 +1,41 @@
+{
+  "configurations": [
+    {
+      "language": "c++",
+      "defaultProfile": "Release",
+      "defaultProjectModelConfiguration": {
+        "command": {
+          "workingDirectory": ".",
+          "command": "cmake",
+          "arguments": [
+            "-GNinja",
+            "-DCMAKE_BUILD_TYPE=Release",
+            "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+          ]
+        },
+        "dockerContainer": {
+          "image": "cpp-build-tool-worker",
+          "cpus": 2.0,
+          "memory": "6G"
+        },
+        "artifacts": [],
+        "compileCommandsLocation": "compile_commands.json"
+      },
+      "defaultCodeModelConfiguration": {
+        "indexAllSymbols": false,
+        "numberOfIndexingThreads": 8,
+        "dockerContainer": {
+          "image": "clangd-indexer-worker",
+          "cpus": 2.0,
+          "memory": "6G"
+        }
+      },
+      "compilationProfiles": [
+        {
+          "name": "Release",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
